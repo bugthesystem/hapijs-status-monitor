@@ -1,0 +1,21 @@
+{
+  "name": "hapijs-status-monitor",
+  "version": "0.1.0",
+  "description": "Monitoring plugin for Hapi.js applications",
+  "main": "index.js",
+  "keywords": [
+    "node",
+    "status",
+    "monitoring",
+    "hapi.js",
+    "charts"
+  ],
+  "author": "@ziyasal sarikayaziya@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^14.2.0",
+    "hoek": "^4.0.2",
+    "pidusage": "^1.0.4",
+    "socket.io": "^1.4.8"
+  }
+}
