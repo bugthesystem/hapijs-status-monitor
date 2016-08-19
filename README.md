@@ -4,6 +4,9 @@ Simple, self-hosted module based on Socket.io and Chart.js to report realtime se
 
 **Inspired from [express-status-monitor](https://github.com/RafalWilinski/express-status-monitor)**
 
+
+![](https://raw.githubusercontent.com/ziyasal/hapijs-status-monitor/master/misc/fun.png)  
+
 ## Installation & setup
 1. Run `npm install hapijs-status-monitor --save`
 
