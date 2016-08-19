@@ -1,6 +1,6 @@
 
 # hapijs-status-monitor
-Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Hapi.js servers. More Node frameworks coming soon.
+Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Hapi.js servers. 
 
 **Inspired from [express-status-monitor](https://github.com/RafalWilinski/express-status-monitor)**
 
