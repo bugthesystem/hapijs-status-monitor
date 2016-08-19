@@ -10,13 +10,18 @@ Simple, self-hosted module based on Socket.io and Chart.js to report realtime se
 ## Installation & setup
 1. Run `npm install hapijs-status-monitor --save`
 
-2. Register plugin `server.register({ register: require('./plugin')});`
+2. Register plugin `server.register({ register: require('hapijs-status-monitor')});`
 3. Run server and go to `/status`
+
+_**To send requests locally**_
+```sh
+ while sleep 1; do curl http://localhost:8000/hello; done
+```
 
 ## Options
 
 Monitor can be configured by passing options object into  server register method 
-`server.register({ register: require('./plugin'), options:{}});` .
+`server.register({ register: require('hapijs-status-monitor'), options:{}});` .
  
 Default config:
 ```
