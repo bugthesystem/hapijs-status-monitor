@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Monitoring plugin for Hapi.js applications",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ziyasal/hapijs-status-monitor"
+  },
   "keywords": [
     "node",
     "status",
