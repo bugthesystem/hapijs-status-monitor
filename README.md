@@ -20,8 +20,10 @@ _**To send requests locally**_
 
 ## Options
 
-Monitor can be configured by passing options object into  server register method 
-`server.register({ register: require('hapijs-status-monitor'), options:{}});` .
+Monitor can be configured by passing options object into  server register method  
+```js
+server.register({ register: require('hapijs-status-monitor'), options:{}})
+```
  
 Default config:
 ```
