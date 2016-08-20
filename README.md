@@ -8,10 +8,16 @@ Simple, self-hosted module based on Socket.io and Chart.js to report realtime se
 ![](https://raw.githubusercontent.com/ziyasal/hapijs-status-monitor/master/misc/fun.png)  
 
 ## Installation & setup
-1. Run `npm install hapijs-status-monitor --save`
+**Install package**
+```sh
+npm install hapijs-status-monitor --save
+```
 
-2. Register plugin `server.register({ register: require('hapijs-status-monitor')});`
-3. Run server and go to `/status`
+**Register plugin**
+```js
+server.register({ register: require('hapijs-status-monitor')});
+```
+**Run server and go to** `/status`
 
 _**To send requests locally**_
 ```sh
@@ -22,10 +28,10 @@ _**To send requests locally**_
 
 Monitor can be configured by passing options object into  server register method  
 ```js
-server.register({ register: require('hapijs-status-monitor'), options:{}})
+server.register({ register: require('hapijs-status-monitor'), options:{'your-options':'here'}})
 ```
  
-Default config:
+Default options:
 ```
 path: '/status',
 spans: [{
@@ -38,9 +44,8 @@ spans: [{
   interval: 15,    // Every 15 seconds
   retention: 60
 }]
-
 ```
 
 ## License
 
-[MIT License](https://opensource.org/licenses/MIT) © ziyasal
+[MIT](https://opensource.org/licenses/MIT)
