@@ -25,9 +25,8 @@ const defaults = {
     }]
 };
 
-
-Array.prototype.last = function () {
-  return this[this.length - 1];
+const last = (array) => {
+  return array[array.length - 1];
 };
 
 const gatherOsMetrics = (io, span) => {
@@ -49,7 +48,7 @@ const gatherOsMetrics = (io, span) => {
     stat.timestamp = Date.now();
 
     span.os.push(stat);
-    if (!span.responses[0] || span.responses.last().timestamp + (span.interval * 1000) < Date.now()) span.responses.push(defaultResponse);
+    if (!span.responses[0] || last(span.responses).timestamp + (span.interval * 1000) < Date.now()) span.responses.push(defaultResponse);
 
     if (span.os.length >= span.retention) span.os.shift();
     if (span.responses[0] && span.responses.length > span.retention) span.responses.shift();
