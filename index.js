@@ -2,7 +2,6 @@
 'use strict';
 
 const Package = require('./package.json')
-const Hapi = require('hapi');
 const Hoek = require('hoek');
 const fs = require('fs');
 const path = require('path');
@@ -25,10 +24,6 @@ const defaults = {
     }]
 };
 
-const last = (array) => {
-  return array[array.length - 1];
-};
-
 const gatherOsMetrics = (io, span) => {
   const defaultResponse = {
     '2': 0,
@@ -48,7 +43,8 @@ const gatherOsMetrics = (io, span) => {
     stat.timestamp = Date.now();
 
     span.os.push(stat);
-    if (!span.responses[0] || last(span.responses).timestamp + (span.interval * 1000) < Date.now()) span.responses.push(defaultResponse);
+    const lastItem = span.responses[span.responses.length - 1];
+    if (!span.responses[0] || lastItem.timestamp + (span.interval * 1000) < Date.now()) span.responses.push(defaultResponse);
 
     if (span.os.length >= span.retention) span.os.shift();
     if (span.responses[0] && span.responses.length > span.retention) span.responses.shift();
@@ -90,25 +86,35 @@ var register = function (server, options, next) {
     }
   })
 
+  server.route({
+    method: 'GET',
+    path: options.path,
+    handler: (request, reply) => {
+      fs.readFile(path.join(__dirname + '/index.html'), (err, statusView) => {
+        if (err) throw err;
+        reply(statusView).header('Content-Type', 'text/html').code(200)
+      });
+    }
+  });
+
   /*  hook into the middle of processing  */
   server.ext("onPreResponse", (request, reply) => {
-    let statusCode = request.response.statusCode;
+    let resp = request.response;
+    let statusCode = resp.statusCode;
     const startTime = process.hrtime();
-    if (request.path === options.path) {
-      return reply(fs.readFileSync(path.join(__dirname + '/index.html'))).header('Content-Type', 'text/html').code(200);
-    } else {
 
+    resp.once('finish', () => {
       const diff = process.hrtime(startTime);
       const responseTime = diff[0] * 1e3 + diff[1] * 1e-6;
       const category = Math.floor(statusCode / 100);
 
       options.spans.forEach((span) => {
-        const last = span.responses[span.responses.length - 1];
-        if (last !== undefined &&
-          span.responses.last().timestamp / 1000 + span.interval > Date.now() / 1000) {
-          span.responses.last()[category]++;
-          span.responses.last().count++;
-          span.responses.last().mean = span.responses.last().mean + ((responseTime - span.responses.last().mean) / span.responses.last().count);
+        const lastItem = span.responses[span.responses.length - 1];
+        if (lastItem !== undefined &&
+          lastItem.timestamp / 1000 + span.interval > Date.now() / 1000) {
+          lastItem[category]++;
+          lastItem.count++;
+          lastItem.mean = lastItem.mean + ((responseTime - lastItem.mean) / lastItem.count);
         } else {
           span.responses.push({
             '2': category === 2 ? 1 : 0,
@@ -121,7 +127,7 @@ var register = function (server, options, next) {
           });
         }
       });
-    }
+    });
 
     return reply.continue()
   })

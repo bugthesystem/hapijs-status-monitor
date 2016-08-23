@@ -10,7 +10,7 @@ server.connection({
 });
 
 server.register({
-    register: require('hapijs-status-monitor')
+    register: require('../index')
 });
 
 
