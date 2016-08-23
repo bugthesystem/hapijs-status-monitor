@@ -1,6 +1,6 @@
 {
   "name": "hapijs-status-monitor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Monitoring plugin for Hapi.js applications",
   "main": "index.js",
   "keywords": [

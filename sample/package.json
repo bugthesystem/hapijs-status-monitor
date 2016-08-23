@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hapijs-status-monitor": "^0.1.0"
+    "hapijs-status-monitor": "^0.3.0"
   }
 }

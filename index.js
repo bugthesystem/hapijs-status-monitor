@@ -11,6 +11,7 @@ const pidusage = require('pidusage');
 let io;
 
 const defaults = {
+  title: 'Hapi.js Status',
   path: '/status',
   spans: [{
     interval: 1,
@@ -92,14 +93,19 @@ var register = function (server, options, next) {
     handler: (request, reply) => {
       fs.readFile(path.join(__dirname + '/index.html'), (err, statusView) => {
         if (err) throw err;
-        reply(statusView).header('Content-Type', 'text/html').code(200)
+        let renderedHtml = statusView.toString()
+          .replace(/{{title}}/g, options.title)
+          .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/app.js')))
+          .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/style.css')));
+
+        reply(renderedHtml).header('Content-Type', 'text/html').code(200)
       });
     }
   });
 
   /*  hook into the middle of processing  */
-  server.ext("onPreResponse", (request, reply) => {
-    let resp = request.response;
+  server.ext('onPreResponse', (request, reply) => {
+    const resp = request.response;
     let statusCode = resp.statusCode;
     const startTime = process.hrtime();
 
