@@ -37,7 +37,9 @@ const gatherOsMetrics = (io, span) => {
   };
 
   pidusage.stat(process.pid, (err, stat) => {
-
+    if (!stat) {
+      return
+    }
     // Convert from B to MB
     stat.memory = stat.memory / 1024 / 1024;
     stat.load = os.loadavg();
@@ -105,36 +107,37 @@ var register = function (server, options, next) {
 
   /*  hook into the middle of processing  */
   server.ext('onPreResponse', (request, reply) => {
-    const resp = request.response;
-    let statusCode = resp.statusCode;
-    const startTime = process.hrtime();
+    if (!request.response){
+      const resp = request.response;
+      let statusCode = resp.statusCode;
+      const startTime = process.hrtime();
 
-    resp.once('finish', () => {
-      const diff = process.hrtime(startTime);
-      const responseTime = diff[0] * 1e3 + diff[1] * 1e-6;
-      const category = Math.floor(statusCode / 100);
+      resp.once('finish', () => {
+        const diff = process.hrtime(startTime);
+        const responseTime = diff[0] * 1e3 + diff[1] * 1e-6;
+        const category = Math.floor(statusCode / 100);
 
-      options.spans.forEach((span) => {
-        const lastItem = span.responses[span.responses.length - 1];
-        if (lastItem !== undefined &&
-          lastItem.timestamp / 1000 + span.interval > Date.now() / 1000) {
-          lastItem[category]++;
-          lastItem.count++;
-          lastItem.mean = lastItem.mean + ((responseTime - lastItem.mean) / lastItem.count);
-        } else {
-          span.responses.push({
-            '2': category === 2 ? 1 : 0,
-            '3': category === 3 ? 1 : 0,
-            '4': category === 4 ? 1 : 0,
-            '5': category === 5 ? 1 : 0,
-            count: 1,
-            mean: responseTime,
-            timestamp: Date.now()
-          });
-        }
+        options.spans.forEach((span) => {
+          const lastItem = span.responses[span.responses.length - 1];
+          if (lastItem !== undefined &&
+            lastItem.timestamp / 1000 + span.interval > Date.now() / 1000) {
+            lastItem[category]++;
+            lastItem.count++;
+            lastItem.mean = lastItem.mean + ((responseTime - lastItem.mean) / lastItem.count);
+          } else {
+            span.responses.push({
+              '2': category === 2 ? 1 : 0,
+              '3': category === 3 ? 1 : 0,
+              '4': category === 4 ? 1 : 0,
+              '5': category === 5 ? 1 : 0,
+              count: 1,
+              mean: responseTime,
+              timestamp: Date.now()
+            });
+          }
+        });
       });
-    });
-
+    }
     return reply.continue()
   })
 
