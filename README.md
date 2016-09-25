@@ -20,7 +20,9 @@ npm install hapijs-status-monitor --save
 **Register plugin**
 
 ```js
-server.register({ register: require('hapijs-status-monitor')});
+server.register({
+  register: require('hapijs-status-monitor')
+});
 ```
 **Run server and go to** `/status`
 
