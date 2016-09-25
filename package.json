@@ -1,11 +1,11 @@
 {
   "name": "hapijs-status-monitor",
   "version": "0.3.0",
-  "description": "Monitoring plugin for Hapi.js applications",
+  "description": "Monitoring plugin for hapi.js applications",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ziyasal/hapijs-status-monitor"
+    "url": "https://github.com/ziyasal/hapijs-status-monitor.git"
   },
   "keywords": [
     "node",
