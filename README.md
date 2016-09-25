@@ -31,7 +31,7 @@ _**To send requests locally**_
 
 ## Run examples
 
-1. Go to `cd sample/`
+1. Go to `cd examples/`
 2. Run `npm i`
 3. Run server `npm start`
 4. Go to `http://0.0.0.0:8000/status`
