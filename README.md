@@ -1,19 +1,24 @@
 
 # hapijs-status-monitor
-Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Hapi.js servers. 
+
+Simple, self-hosted module based on [Socket.IO](http://socket.io) and
+[Chart.js](http://www.chartjs.org) to report realtime server metrics for
+[hapi.js](http://hapijs.com) servers.
 
 **Inspired from [express-status-monitor](https://github.com/RafalWilinski/express-status-monitor)**
 
-
-![](https://raw.githubusercontent.com/ziyasal/hapijs-status-monitor/master/misc/fun.png)  
+![screenshot](./misc/fun.png)
 
 ## Installation & setup
+
 **Install package**
+
 ```sh
 npm install hapijs-status-monitor --save
 ```
 
 **Register plugin**
+
 ```js
 server.register({ register: require('hapijs-status-monitor')});
 ```
@@ -24,14 +29,28 @@ _**To send requests locally**_
  while sleep 1; do curl http://localhost:8000/hello; done
 ```
 
+## Run examples
+
+1. Go to `cd sample/`
+2. Run `npm i`
+3. Run server `npm start`
+4. Go to `http://0.0.0.0:8000/status`
+
 ## Options
 
-Monitor can be configured by passing options object into  server register method  
+Monitor can be configured by passing options object into server register method
+
 ```js
-server.register({ register: require('hapijs-status-monitor'), options:{'your-options':'here'}})
+server.register({
+  register: require('hapijs-status-monitor'),
+  options: {
+    'your-options': 'here'
+  }
+});
 ```
- 
+
 Default options:
+
 ```
 path: '/status',
 spans: [{
@@ -48,4 +67,4 @@ spans: [{
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](./license.txt)
