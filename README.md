@@ -7,7 +7,7 @@ Simple, self-hosted module based on [Socket.IO](http://socket.io) and
 
 **Inspired from [express-status-monitor](https://github.com/RafalWilinski/express-status-monitor)**
 
-![screenshot](./docs/images/screenshot.png)
+![screenshot](./docs/images/screenshot.jpg)
 
 ## Installation & setup
 
