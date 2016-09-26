@@ -26,17 +26,12 @@ server.register({
 ```
 **Run server and go to** `/status`
 
-_**To send requests locally**_
-```sh
- while sleep 1; do curl http://localhost:8000/hello; done
-```
-
 ## Run examples
 
 1. Go to `cd examples/`
 2. Run `npm i`
 3. Run server `npm start`
-4. Go to `http://0.0.0.0:8000/status`
+4. Go to `http://localhost:8000/status`
 
 ## Options
 

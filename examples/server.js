@@ -13,16 +13,6 @@ server.register({
   register: require('hapijs-status-monitor')
 });
 
-
-// Add the "/hello" route
-server.route({
-  method: 'GET',
-  path: '/hello',
-  handler: function (request, reply) {
-    return reply('hello world');
-  }
-});
-
 // Add the "/return-status/{statusCode}" route
 server.route({
   method: 'GET',
