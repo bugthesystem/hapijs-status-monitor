@@ -1,15 +1,16 @@
 {
   "name": "hapijs-status-monitor-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "Examples",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "@ziyasal sarikayaziya@gmail.com",
+  "license": "MIT",
   "dependencies": {
-    "hapijs-status-monitor": "^0.3.0"
+    "hapijs-status-monitor": "../",
+    "request": "^2.74.0"
   }
 }
