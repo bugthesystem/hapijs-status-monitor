@@ -18,7 +18,6 @@
   "license": "MIT",
   "dependencies": {
     "hapi": "^14.2.0",
-    "on-headers": "^1.0.1",
     "pidusage": "^1.0.4",
     "socket.io": "^1.4.8"
   }

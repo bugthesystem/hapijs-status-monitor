@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const onHeaders = require('on-headers');
 const validate = require('./helpers/validate');
 const onHeadersListener = require('./helpers/on-headers-listener');
 const socketIoInit = require('./helpers/socket-io-init');
@@ -31,9 +30,9 @@ var middlewareWrapper = function (server, options, next) {
     }
   });
 
-  // hook into the middle of processing
+  // Hook into the middle of processing
   server.ext('onPreResponse', (request, reply) => {
-    if (request.response || request.path === options.path) {
+    if (request.response.isBoom || request.path === options.path) {
       return reply.continue();
     }
 
@@ -41,13 +40,13 @@ var middlewareWrapper = function (server, options, next) {
     const resp = request.response;
 
     resp.once('finish', () => {
-      onHeaders(resp, () => { onHeadersListener(resp.statusCode, startTime, options.spans) });
+      onHeadersListener(resp.statusCode, startTime, options.spans);
     });
 
     return reply.continue();
   });
 
-  // continue processing
+  // Continue processing
   return next();
 }
 
