@@ -17,7 +17,6 @@
   "author": "@ziyasal sarikayaziya@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^14.2.0",
     "pidusage": "^1.0.4",
     "socket.io": "^1.4.8"
   }
