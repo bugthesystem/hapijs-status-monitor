@@ -3,6 +3,10 @@
   "version": "0.4.0",
   "description": "Monitoring plugin for hapi.js applications",
   "main": "index.js",
+  "scripts": {
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ziyasal/hapijs-status-monitor.git"
@@ -19,5 +23,8 @@
   "dependencies": {
     "pidusage": "^1.0.4",
     "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "jest": "^16.0.2"
   }
 }
