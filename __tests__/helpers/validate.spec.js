@@ -3,7 +3,7 @@ const validate = require('../../src/helpers/validate');
 
 describe('helpers', () => {
   describe('validate', () => {
-    describe('when config is null or undefined', () => {
+    describe('when config is empty', () => {
       const config = validate();
 
       it(`then title === ${defaultConfig.title}`, () => {
