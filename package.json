@@ -19,6 +19,11 @@
     "charts"
   ],
   "author": "@ziyasal sarikayaziya@gmail.com",
+  "contributors": [
+    {
+      "name": "Daniel Bayerlein"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "pidusage": "^1.1.0",
