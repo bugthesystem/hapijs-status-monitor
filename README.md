@@ -50,7 +50,7 @@ server.register({
 
 Default options:
 
-```
+```js
 path: '/status',
 spans: [{
   interval: 1,     // Every second
