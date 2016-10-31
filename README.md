@@ -43,7 +43,7 @@ Monitor can be configured by passing options object into server register method
 server.register({
   register: require('hapijs-status-monitor'),
   options: {
-    'your-options': 'here'
+    title: 'My Status Monitor'
   }
 });
 ```
