@@ -51,6 +51,7 @@ server.register({
 Default options:
 
 ```js
+title: 'hapi.js Status',
 path: '/status',
 spans: [{
   interval: 1,     // Every second
