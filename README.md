@@ -43,7 +43,10 @@ Monitor can be configured by passing options object into server register method
 server.register({
   register: require('hapijs-status-monitor'),
   options: {
-    title: 'My Status Monitor'
+    title: 'My Status Monitor',
+    route: {
+      auth: false
+    }
   }
 });
 ```
@@ -62,7 +65,8 @@ spans: [{
 }, {
   interval: 15,    // Every 15 seconds
   retention: 60
-}]
+}],
+route: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
 ```
 
 ## License
