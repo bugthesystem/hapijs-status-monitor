@@ -4,7 +4,6 @@
   "description": "Monitoring plugin for hapi.js applications",
   "main": "index.js",
   "scripts": {
-    "coverage": "jest --coverage",
     "test": "jest --coverage"
   },
   "repository": {
