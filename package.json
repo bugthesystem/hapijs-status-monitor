@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "jest --coverage",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",

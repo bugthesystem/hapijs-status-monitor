@@ -4,3 +4,5 @@ node_js:
 cache:
   directories:
     - node_modules
+after_success:
+    - './node_modules/.bin/jest --coevarge && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
