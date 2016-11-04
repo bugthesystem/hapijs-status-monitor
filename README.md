@@ -1,7 +1,7 @@
 
 # hapijs-status-monitor
 
-[![npm](https://img.shields.io/npm/v/hapijs-status-monitor.svg)](https://www.npmjs.com/package/hapijs-status-monitor)
+[![Build Status](https://travis-ci.org/ziyasal/hapijs-status-monitor.svg?branch=master)](https://travis-ci.org/ziyasal/hapijs-status-monitor) [![npm](https://img.shields.io/npm/v/hapijs-status-monitor.svg)](https://www.npmjs.com/package/hapijs-status-monitor)
 
 Simple, self-hosted module based on [Socket.IO](http://socket.io) and
 [Chart.js](http://www.chartjs.org) to report realtime server metrics for
