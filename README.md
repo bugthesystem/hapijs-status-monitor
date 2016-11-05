@@ -43,14 +43,18 @@ Monitor can be configured by passing options object into server register method
 server.register({
   register: require('hapijs-status-monitor'),
   options: {
-    'your-options': 'here'
+    title: 'My Status Monitor',
+    routeConfig: {
+      auth: false
+    }
   }
 });
 ```
 
 Default options:
 
-```
+```js
+title: 'hapi.js Status',
 path: '/status',
 spans: [{
   interval: 1,     // Every second
@@ -61,7 +65,8 @@ spans: [{
 }, {
   interval: 15,    // Every 15 seconds
   retention: 60
-}]
+}],
+routeConfig: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
 ```
 
 ## License

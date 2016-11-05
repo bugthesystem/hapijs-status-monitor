@@ -20,6 +20,10 @@ describe('helpers', () => {
 
         expect(spans).toEqual(defaultConfig.spans);
       });
+
+      it('then routeConfig === {}', () => {
+        expect({}).toEqual(defaultConfig.routeConfig);
+      });
     });
   });
 });
