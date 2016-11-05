@@ -21,8 +21,8 @@ describe('helpers', () => {
         expect(spans).toEqual(defaultConfig.spans);
       });
 
-      it('then route === {}', () => {
-        expect({}).toEqual(defaultConfig.route);
+      it('then routeConfig === {}', () => {
+        expect({}).toEqual(defaultConfig.routeConfig);
       });
     });
   });

@@ -15,5 +15,5 @@ module.exports = {
       retention: 60,
     },
   ],
-  route: {}, // https://github.com/hapijs/hapi/blob/master/API.md#route-options
+  routeConfig: {}, // https://github.com/hapijs/hapi/blob/master/API.md#route-options
 };

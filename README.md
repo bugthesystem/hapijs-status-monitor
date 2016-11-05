@@ -44,7 +44,7 @@ server.register({
   register: require('hapijs-status-monitor'),
   options: {
     title: 'My Status Monitor',
-    route: {
+    routeConfig: {
       auth: false
     }
   }
@@ -66,7 +66,7 @@ spans: [{
   interval: 15,    // Every 15 seconds
   retention: 60
 }],
-route: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
+routeConfig: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
 ```
 
 ## License

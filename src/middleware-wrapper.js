@@ -28,7 +28,7 @@ var middlewareWrapper = function (server, options, next) {
         .header('Content-Type', 'text/html')
         .code(200)
     },
-    config: options.route,
+    config: options.routeConfig,
   });
 
   // Hook into the middle of processing

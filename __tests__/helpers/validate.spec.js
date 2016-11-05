@@ -18,8 +18,8 @@ describe('helpers', () => {
         expect(config.spans).toEqual(defaultConfig.spans);
       });
 
-      it(`then route === ${defaultConfig.route}`, () => {
-        expect(config.route).toEqual(defaultConfig.route);
+      it(`then route === ${defaultConfig.routeConfig}`, () => {
+        expect(config.routeConfig).toEqual(defaultConfig.routeConfig);
       });
     });
 
@@ -28,7 +28,7 @@ describe('helpers', () => {
         title: true,
         path: false,
         spans: 'not-an-array',
-        route: 'not-an-object'
+        routeConfig: 'not-an-object'
       });
 
       it(`then title === ${defaultConfig.title}`, () => {
@@ -43,8 +43,8 @@ describe('helpers', () => {
         expect(config.spans).toEqual(defaultConfig.spans);
       });
 
-      it(`then route === ${JSON.stringify(defaultConfig.route)}`, () => {
-        expect(config.route).toEqual(defaultConfig.route);
+      it(`then routeConfig === ${JSON.stringify(defaultConfig.routeConfig)}`, () => {
+        expect(config.routeConfig).toEqual(defaultConfig.routeConfig);
       });
     });
 
@@ -53,7 +53,7 @@ describe('helpers', () => {
         title: 'Custom title',
         path: '/custom-path',
         spans: [{}, {}, {}],
-        route: { auth: false }
+        routeConfig: { auth: false }
       }
 
       const config = validate(customConfig);
@@ -70,8 +70,8 @@ describe('helpers', () => {
         expect(config.spans).toEqual(customConfig.spans);
       });
 
-      it(`then route === ${JSON.stringify(customConfig.route)}`, () => {
-        expect(config.route).toEqual(customConfig.route);
+      it(`then routeConfig === ${JSON.stringify(customConfig.routeConfig)}`, () => {
+        expect(config.routeConfig).toEqual(customConfig.routeConfig);
       });
     });
   });

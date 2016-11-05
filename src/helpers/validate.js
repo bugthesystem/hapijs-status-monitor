@@ -17,8 +17,8 @@ module.exports = (config) => {
     config.spans = defaultConfig.spans;
   }
 
-  if (typeof config.route !== 'object') {
-    config.route = defaultConfig.route;
+  if (typeof config.routeConfig !== 'object') {
+    config.routeConfig = defaultConfig.routeConfig;
   }
 
   return config;
