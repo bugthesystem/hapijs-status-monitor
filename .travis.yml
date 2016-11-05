@@ -5,4 +5,4 @@ cache:
   directories:
     - node_modules
 after_success:
-    - 'npm install coveralls &&./node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
+    - './node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
