@@ -15,17 +15,17 @@ module.exports = (io, span) => {
 
   pidusage.stat(process.pid, (err, stat) => {
     if (err) {
-      console.error(err);
+      console.error(err); // eslint-disable-line no-console
       return;
     }
 
-    const last = span.responses[span.responses.length - 1];
-    // Convert from B to MB
-    stat.memory = stat.memory / 1024 / 1024;
-    stat.load = os.loadavg();
-    stat.timestamp = Date.now();
+    const statObj = stat;
+    statObj.memory = statObj.memory / 1024 / 1024; // Convert from B to MB
+    statObj.load = os.loadavg();
+    statObj.timestamp = Date.now();
+    span.os.push(statObj);
 
-    span.os.push(stat);
+    const last = span.responses[span.responses.length - 1];
     if (!span.responses[0] || last.timestamp + (span.interval * 1000) < Date.now()) {
       span.responses.push(defaultResponse);
     }
