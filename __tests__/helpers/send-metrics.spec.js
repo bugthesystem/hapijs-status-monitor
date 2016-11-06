@@ -10,10 +10,10 @@ describe('helpers', () => {
         sendMetrics(io, span);
 
         expect(io.emit).toHaveBeenCalledWith('stats', {
-          'interval': undefined,
-          'os': undefined,
-          'responses': undefined,
-          'retention': undefined
+          interval: undefined,
+          os: undefined,
+          responses: undefined,
+          retention: undefined,
         });
       });
     });
