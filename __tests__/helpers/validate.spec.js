@@ -28,7 +28,7 @@ describe('helpers', () => {
         title: true,
         path: false,
         spans: 'not-an-array',
-        routeConfig: 'not-an-object'
+        routeConfig: 'not-an-object',
       });
 
       it(`then title === ${defaultConfig.title}`, () => {
@@ -53,8 +53,8 @@ describe('helpers', () => {
         title: 'Custom title',
         path: '/custom-path',
         spans: [{}, {}, {}],
-        routeConfig: { auth: false }
-      }
+        routeConfig: { auth: false },
+      };
 
       const config = validate(customConfig);
 
