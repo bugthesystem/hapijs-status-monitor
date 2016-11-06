@@ -1,25 +1,27 @@
 const defaultConfig = require('./default-config');
 
 module.exports = (config) => {
-  if (!config) {
+  const cfg = config;
+
+  if (!cfg) {
     return defaultConfig;
   }
 
-  if (typeof config.title !== 'string') {
-    config.title = defaultConfig.title;
+  if (typeof cfg.title !== 'string') {
+    cfg.title = defaultConfig.title;
   }
 
-  if (typeof config.path !== 'string') {
-    config.path = defaultConfig.path;
+  if (typeof cfg.path !== 'string') {
+    cfg.path = defaultConfig.path;
   }
 
-  if (typeof config.spans !== 'object') {
-    config.spans = defaultConfig.spans;
+  if (typeof cfg.spans !== 'object') {
+    cfg.spans = defaultConfig.spans;
   }
 
-  if (typeof config.routeConfig !== 'object') {
-    config.routeConfig = defaultConfig.routeConfig;
+  if (typeof cfg.routeConfig !== 'object') {
+    cfg.routeConfig = defaultConfig.routeConfig;
   }
 
-  return config;
+  return cfg;
 };
