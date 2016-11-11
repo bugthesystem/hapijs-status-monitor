@@ -1,2 +1,3 @@
 node_modules/
 coverage/
+src/public/javascripts/*.js
