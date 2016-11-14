@@ -24,5 +24,5 @@ server.route({
 // Start the server
 server.start((err) => {
   if (err) throw err;
-  console.log('Server running at:', server.info.uri); // eslint-disable-line no-console
+  console.log('Server running at:', server.info.uri);
 });
