@@ -1,5 +1,3 @@
-'use strict';
-
 const socketIo = require('socket.io');
 const gatherOsMetrics = require('./gather-os-metrics');
 
@@ -16,9 +14,11 @@ module.exports = (server, spans) => {
       });
     });
 
-    spans.forEach((span) => {
+    spans.forEach((currentSpan) => {
+      const span = currentSpan;
       span.os = [];
       span.responses = [];
+
       const interval = setInterval(() => gatherOsMetrics(io, span), span.interval * 1000);
       interval.unref(); // don't keep node.js process up
     });

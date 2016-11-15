@@ -4,7 +4,8 @@
   "description": "Monitoring plugin for hapi.js applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "lint": "eslint --format=node_modules/eslint-formatter-pretty .",
+    "test": "npm run lint && jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,10 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
+    "eslint": "^3.10.0",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "jest": "^17.0.0"
   }
 }

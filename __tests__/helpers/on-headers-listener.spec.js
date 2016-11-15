@@ -7,8 +7,11 @@ describe('helpers', () => {
       const spans = defaultConfig.spans;
 
       beforeEach(() => {
-        spans.forEach((span) => {
+        spans.map((currentSpan) => {
+          const span = currentSpan;
           span.responses = [];
+
+          return span;
         });
       });
 

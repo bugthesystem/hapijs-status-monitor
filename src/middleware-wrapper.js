@@ -5,35 +5,35 @@ const onHeadersListener = require('./helpers/on-headers-listener');
 const socketIoInit = require('./helpers/socket-io-init');
 
 // hapi.js plugin register function
-var middlewareWrapper = function (server, options, next) {
-  options = validate(options);
+const middlewareWrapper = (server, options, next) => {
+  const opts = validate(options);
 
   // Setup Socket.IO
   server.on('start', () => {
-    socketIoInit(server.listener, options.spans);
+    socketIoInit(server.listener, opts.spans);
   });
 
   server.route({
     method: 'GET',
-    path: options.path,
+    path: opts.path,
     handler: (request, reply) => {
       const renderedHtml =
         fs.readFileSync(path.join(__dirname, '/public/index.html'))
           .toString()
-          .replace(/{{title}}/g, options.title)
+          .replace(/{{title}}/g, opts.title)
           .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
           .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
 
       reply(renderedHtml)
         .header('Content-Type', 'text/html')
-        .code(200)
+        .code(200);
     },
-    config: options.routeConfig,
+    config: opts.routeConfig,
   });
 
   // Hook into the middle of processing
   server.ext('onPreResponse', (request, reply) => {
-    if (request.response.isBoom || request.path === options.path) {
+    if (request.response.isBoom || request.path === opts.path) {
       return reply.continue();
     }
 
@@ -41,7 +41,7 @@ var middlewareWrapper = function (server, options, next) {
     const resp = request.response;
 
     resp.once('finish', () => {
-      onHeadersListener(resp.statusCode, startTime, options.spans);
+      onHeadersListener(resp.statusCode, startTime, opts.spans);
     });
 
     return reply.continue();
@@ -49,6 +49,6 @@ var middlewareWrapper = function (server, options, next) {
 
   // Continue processing
   return next();
-}
+};
 
 module.exports = middlewareWrapper;

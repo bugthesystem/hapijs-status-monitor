@@ -1,27 +1,23 @@
-'use strict';
-
 const Hapi = require('hapi');
+const hapijsStatusMonitor = require('hapijs-status-monitor');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({
   host: 'localhost',
-  port: 8000
+  port: 8000,
 });
 
-server.register({
-  register: require('hapijs-status-monitor')
-});
+server.register({ register: hapijsStatusMonitor });
 
 // Add the "/return-status/{statusCode}" route
 server.route({
   method: 'GET',
   path: '/return-status/{statusCode}',
-  handler: function (request, reply) {
-    const statusCode = request.params.statusCode;
-
-    return reply(statusCode).code(parseInt(statusCode));
-  }
+  handler: (request, reply) => {
+    const statusCode = parseInt(request.params.statusCode, 10);
+    return reply(statusCode).code(statusCode);
+  },
 });
 
 // Start the server
