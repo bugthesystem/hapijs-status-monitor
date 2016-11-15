@@ -18,6 +18,7 @@ module.exports = (server, spans) => {
       const span = currentSpan;
       span.os = [];
       span.responses = [];
+
       const interval = setInterval(() => gatherOsMetrics(io, span), span.interval * 1000);
       interval.unref(); // don't keep node.js process up
     });

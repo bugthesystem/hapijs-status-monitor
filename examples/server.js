@@ -14,10 +14,9 @@ server.register({ register: hapijsStatusMonitor });
 server.route({
   method: 'GET',
   path: '/return-status/{statusCode}',
-  handler: function handler(request, reply) {
-    const statusCode = request.params.statusCode;
-
-    return reply(statusCode).code(parseInt(statusCode, 10));
+  handler: (request, reply) => {
+    const statusCode = parseInt(request.params.statusCode, 10);
+    return reply(statusCode).code(statusCode);
   },
 });
 

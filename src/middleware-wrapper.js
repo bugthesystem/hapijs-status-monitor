@@ -5,7 +5,7 @@ const onHeadersListener = require('./helpers/on-headers-listener');
 const socketIoInit = require('./helpers/socket-io-init');
 
 // hapi.js plugin register function
-const middlewareWrapper = function middlewareWrapper(server, options, next) {
+const middlewareWrapper = (server, options, next) => {
   const opts = validate(options);
 
   // Setup Socket.IO
