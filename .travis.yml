@@ -8,4 +8,4 @@ cache:
   directories:
     - node_modules
 after_success:
-    - './node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
+    - './node_modules/.bin/jest && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
