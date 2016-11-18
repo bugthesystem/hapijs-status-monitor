@@ -12,6 +12,6 @@
   "dependencies": {
     "hapi": "^15.2.0",
     "hapijs-status-monitor": "file:../",
-    "request": "^2.74.0"
+    "request": "^2.78.0"
   }
 }
