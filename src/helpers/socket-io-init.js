@@ -1,3 +1,5 @@
+'use strict'; // eslint-disable-line strict, lines-around-directive
+
 const socketIo = require('socket.io');
 const gatherOsMetrics = require('./gather-os-metrics');
 
