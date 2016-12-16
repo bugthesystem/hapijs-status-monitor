@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --format=node_modules/eslint-formatter-pretty .",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "prepush": "npm test"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "husky": "^0.12.0",
     "jest": "^18.0.0"
   },
   "jest": {
