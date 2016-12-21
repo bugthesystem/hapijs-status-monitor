@@ -21,6 +21,10 @@ describe('helpers', () => {
       it(`then route === ${defaultConfig.routeConfig}`, () => {
         expect(config.routeConfig).toEqual(defaultConfig.routeConfig);
       });
+
+      it(`then connectionLabel === ${defaultConfig.connectionLabel}`, () => {
+        expect(config.connectionLabel).toEqual(defaultConfig.connectionLabel);
+      });
     });
 
     describe('when config is invalid', () => {
@@ -29,6 +33,7 @@ describe('helpers', () => {
         path: false,
         spans: 'not-an-array',
         routeConfig: 'not-an-object',
+        connectionLabel: false,
       });
 
       it(`then title === ${defaultConfig.title}`, () => {
@@ -46,6 +51,10 @@ describe('helpers', () => {
       it(`then routeConfig === ${JSON.stringify(defaultConfig.routeConfig)}`, () => {
         expect(config.routeConfig).toEqual(defaultConfig.routeConfig);
       });
+
+      it(`then connectionLabel === ${defaultConfig.connectionLabel}`, () => {
+        expect(config.connectionLabel).toEqual(defaultConfig.connectionLabel);
+      });
     });
 
     describe('when config is valid', () => {
@@ -54,6 +63,7 @@ describe('helpers', () => {
         path: '/custom-path',
         spans: [{}, {}, {}],
         routeConfig: { auth: false },
+        connectionLabel: 'web',
       };
 
       const config = validate(customConfig);
@@ -72,6 +82,10 @@ describe('helpers', () => {
 
       it(`then routeConfig === ${JSON.stringify(customConfig.routeConfig)}`, () => {
         expect(config.routeConfig).toEqual(customConfig.routeConfig);
+      });
+
+      it(`then connectionLabel === ${customConfig.connectionLabel}`, () => {
+        expect(config.connectionLabel).toEqual(customConfig.connectionLabel);
       });
     });
   });

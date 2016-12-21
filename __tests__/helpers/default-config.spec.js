@@ -24,6 +24,10 @@ describe('helpers', () => {
       it('then routeConfig === {}', () => {
         expect({}).toEqual(defaultConfig.routeConfig);
       });
+
+      it('then connectionLabel === null', () => {
+        expect(null).toEqual(defaultConfig.connectionLabel);
+      });
     });
   });
 });

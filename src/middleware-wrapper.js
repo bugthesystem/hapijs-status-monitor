@@ -8,10 +8,11 @@ const socketIoInit = require('./helpers/socket-io-init');
 const middlewareWrapper = (server, options, next) => {
   const opts = validate(options);
 
-  // Setup Socket.IO
-  server.on('start', () => {
-    socketIoInit(server.listener, opts.spans);
-  });
+  if (opts.connectionLabel) {
+    server = server.select(opts.connectionLabel); // eslint-disable-line no-param-reassign
+  }
+
+  socketIoInit(server.listener, opts.spans);
 
   server.route({
     method: 'GET',

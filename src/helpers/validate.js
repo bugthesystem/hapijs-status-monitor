@@ -23,5 +23,9 @@ module.exports = (config) => {
     cfg.routeConfig = defaultConfig.routeConfig;
   }
 
+  if (typeof cfg.connectionLabel !== 'string') {
+    cfg.connectionLabel = defaultConfig.connectionLabel;
+  }
+
   return cfg;
 };

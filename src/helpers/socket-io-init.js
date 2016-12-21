@@ -5,9 +5,9 @@ const gatherOsMetrics = require('./gather-os-metrics');
 
 let io;
 
-module.exports = (server, spans) => {
+module.exports = (listener, spans) => {
   if (io === null || io === undefined) {
-    io = socketIo(server);
+    io = socketIo(listener);
 
     io.on('connection', (socket) => {
       socket.emit('start', spans);

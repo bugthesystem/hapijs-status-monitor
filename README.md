@@ -57,16 +57,17 @@ Default options:
 title: 'hapi.js Status',
 path: '/status',
 spans: [{
-  interval: 1,     // Every second
-  retention: 60    // Keep 60 datapoints in memory
+  interval: 1,    // Every second
+  retention: 60   // Keep 60 datapoints in memory
 }, {
-  interval: 5,     // Every 5 seconds
+  interval: 5,    // Every 5 seconds
   retention: 60
 }, {
-  interval: 15,    // Every 15 seconds
+  interval: 15,   // Every 15 seconds
   retention: 60
 }],
-routeConfig: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
+routeConfig: {},  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
+connectionLabel: null
 ```
 
 ## License

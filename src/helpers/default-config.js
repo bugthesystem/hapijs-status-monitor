@@ -16,4 +16,5 @@ module.exports = {
     },
   ],
   routeConfig: {}, // https://github.com/hapijs/hapi/blob/master/API.md#route-options
+  connectionLabel: null,
 };
