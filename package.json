@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.15",
-    "eslint": "^3.13.1",
+    "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
