@@ -28,12 +28,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "pidusage": "^1.1.0",
+    "pidusage": "^1.1.1",
     "socket.io": "^1.7.2"
   },
   "devDependencies": {
     "coveralls": "^2.11.15",
-    "eslint": "^3.14.1",
+    "eslint": "^3.15.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
