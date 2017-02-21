@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "pidusage": "^1.1.1",
-    "socket.io": "^1.7.2"
+    "socket.io": "^1.7.3"
   },
   "devDependencies": {
     "coveralls": "^2.11.16",
