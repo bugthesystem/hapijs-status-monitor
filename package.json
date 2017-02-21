@@ -38,11 +38,11 @@
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
     "husky": "^0.13.1",
-    "jest": "^18.1.0"
+    "jest": "^19.0.0"
   },
   "jest": {
     "bail": true,
-    "collectCoverage": "true",
+    "collectCoverage": true,
     "coverageDirectory": "coverage",
     "testEnvironment": "node"
   }
