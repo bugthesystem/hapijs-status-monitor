@@ -33,12 +33,12 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.16",
-    "eslint": "^3.16.0",
+    "eslint": "^3.16.1",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
     "husky": "^0.13.1",
-    "jest": "^19.0.0"
+    "jest": "^19.0.2"
   },
   "jest": {
     "bail": true,
