@@ -32,7 +32,7 @@
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
-    "coveralls": "^2.11.16",
+    "coveralls": "^2.12.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-formatter-pretty": "^1.1.0",
