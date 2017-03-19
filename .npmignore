@@ -1,4 +1,10 @@
-docs/
-examples/
-.vscode/
-__tests__/
+/__tests__
+/coverage
+/docs
+/examples
+/.vscode
+/.eslintignore
+/.eslintrc.yml
+/.gitignore
+/.npmignore
+/.travis.yml
