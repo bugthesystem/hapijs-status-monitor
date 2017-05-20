@@ -10,8 +10,8 @@
   "author": "@ziyasal sarikayaziya@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^16.1.0",
+    "hapi": "^16.1.1",
     "hapijs-status-monitor": "file:../",
-    "request": "^2.79.0"
+    "request": "^2.81.0"
   }
 }
