@@ -279,9 +279,9 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-hapi@^16.3.0:
-  version "16.3.0"
-  resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.3.0.tgz#f6aa6d480b26eb2141d1ebf535e278c49e840bf0"
+hapi@^16.3.1:
+  version "16.3.1"
+  resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.3.1.tgz#5be09c256e20256456ccf098db37f312a5e626de"
   dependencies:
     accept "2.x.x"
     ammo "2.x.x"
