@@ -29,15 +29,15 @@
   "license": "MIT",
   "dependencies": {
     "pidusage": "^1.1.5",
-    "socket.io": "^2.0.2"
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-import": "^2.3.0",
-    "husky": "^0.13.4",
+    "eslint-plugin-import": "^2.6.0",
+    "husky": "^0.14.1",
     "jest": "^20.0.4"
   },
   "jest": {
