@@ -71,4 +71,5 @@ routeConfig: {}  // Route options, see https://github.com/hapijs/hapi/blob/maste
 
 ## License
 
-[MIT](./license.txt)
+Copyright (c) 2016-2017 [@ziyasal](https://github.com/ziyasal) & [@danielbayerlein](https://github.com/ziyasal).
+See [LICENSE](./LICENSE.md) for details.
