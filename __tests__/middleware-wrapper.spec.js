@@ -8,7 +8,12 @@ describe('hapijs-status-monitor', () => {
     });
 
     describe('when invoked', () => {
-      const server = { socket: {}, on: jest.fn(), route: jest.fn(), ext: jest.fn() };
+      const server = {
+        socket: {},
+        on: jest.fn(),
+        route: jest.fn(),
+        ext: jest.fn(),
+      };
       const options = { send: jest.fn() };
       const next = jest.fn();
 

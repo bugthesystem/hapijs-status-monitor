@@ -7,7 +7,7 @@ describe('helpers', () => {
   describe('socket-io-init', () => {
     describe('when invoked', () => {
       it('then all spans should have os and responses property', () => {
-        const spans = defaultConfig.spans;
+        const { spans } = defaultConfig;
 
         spans.forEach((span) => {
           expect(span.os).toBeUndefined();

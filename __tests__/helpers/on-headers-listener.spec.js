@@ -4,7 +4,7 @@ const defaultConfig = require('../../src/helpers/default-config');
 describe('helpers', () => {
   describe('on-headers-listener', () => {
     describe('when invoked', () => {
-      const spans = defaultConfig.spans;
+      const { spans } = defaultConfig;
 
       beforeEach(() => {
         spans.map((currentSpan) => {
