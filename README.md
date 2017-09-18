@@ -69,6 +69,17 @@ spans: [{
 routeConfig: {}  // Route options, see https://github.com/hapijs/hapi/blob/master/API.md#route-options
 ```
 
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars0.githubusercontent.com/u/1651945?v=4" width="75px;"/><br /><sub>z i λ a s a l</sub>](http://www.ziyasal.com)<br />[💻](https://github.com/ziyasal/hapijs-status-monitor/commits?author=ziyasal "Code") [⚠️](https://github.com/ziyasal/hapijs-status-monitor/commits?author=ziyasal "Tests") [📖](https://github.com/ziyasal/hapijs-status-monitor/commits?author=ziyasal "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/457834?v=4" width="75px;"/><br /><sub>Daniel Bayerlein</sub>](https://github.com/danielbayerlein)<br />[💻](https://github.com/ziyasal/hapijs-status-monitor/commits?author=danielbayerlein "Code") [⚠️](https://github.com/ziyasal/hapijs-status-monitor/commits?author=danielbayerlein "Tests") [📖](https://github.com/ziyasal/hapijs-status-monitor/commits?author=danielbayerlein "Documentation") |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
 ## License
 
 Copyright (c) 2016-2017 [@ziyasal](https://github.com/ziyasal) & [@danielbayerlein](https://github.com/danielbayerlein).

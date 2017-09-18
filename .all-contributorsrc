@@ -1,0 +1,33 @@
+{
+  "projectName": "hapijs-status-monitor",
+  "projectOwner": "ziyasal",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 75,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ziyasal",
+      "name": "z i λ a s a l",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1651945?v=4",
+      "profile": "http://www.ziyasal.com",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
+      ]
+    },
+    {
+      "login": "danielbayerlein",
+      "name": "Daniel Bayerlein",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/457834?v=4",
+      "profile": "https://github.com/danielbayerlein",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
+      ]
+    }
+  ]
+}
