@@ -16,7 +16,7 @@ describe('helpers', () => {
       });
 
       it('then for all spans, responses length should equal 1', () => {
-        onHeadersListener(404, process.hrtime(), spans);
+        onHeadersListener(404, Date.now(), spans);
 
         spans.forEach((span) => {
           expect(span.responses.length).toBe(1);
@@ -26,7 +26,7 @@ describe('helpers', () => {
       describe('when invoked after 1 second', () => {
         it('then for span interval 1, responses length should equal 2', () => {
           setTimeout(() => {
-            onHeadersListener(500, process.hrtime(), spans);
+            onHeadersListener(500, Date.now(), spans);
 
             spans.forEach((span) => {
               if (span.interval === 1) {

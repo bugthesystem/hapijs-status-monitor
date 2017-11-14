@@ -156,9 +156,9 @@ socket.on('start', function (data) {
 
   var lastResponseMetric = data[defaultSpan].responses[data[defaultSpan].responses.length - 1];
 
-  responseTimeStat.textContent = '0.00ms';
+  responseTimeStat.textContent = '0ms';
   if (lastResponseMetric) {
-    responseTimeStat.textContent = lastResponseMetric.mean.toFixed(2) + 'ms';
+    responseTimeStat.textContent = lastResponseMetric.mean.toFixed(0) + 'ms';
   }
 
   responseTimeChart.data.datasets[0].data = data[defaultSpan].responses.map(function (point) {
@@ -232,9 +232,9 @@ socket.on('stats', function (data) {
       loadChart.data.labels.push(os.timestamp);
     }
 
-    responseTimeStat.textContent = '0.00ms';
+    responseTimeStat.textContent = '0ms';
     if (responses) {
-      responseTimeStat.textContent = responses.mean.toFixed(2) + 'ms';
+      responseTimeStat.textContent = responses.mean.toFixed(0) + 'ms';
       responseTimeChart.data.datasets[0].data.push(responses.mean);
       responseTimeChart.data.labels.push(responses.timestamp);
     }

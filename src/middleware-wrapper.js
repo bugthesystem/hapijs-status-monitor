@@ -37,11 +37,11 @@ const middlewareWrapper = (server, options, next) => {
       return reply.continue();
     }
 
-    const startTime = process.hrtime();
     const resp = request.response;
 
     resp.once('finish', () => {
-      onHeadersListener(resp.statusCode, startTime, opts.spans);
+      const tookMs = Date.now() - request.info.received;
+      onHeadersListener(resp.statusCode, tookMs, opts.spans);
     });
 
     return reply.continue();
