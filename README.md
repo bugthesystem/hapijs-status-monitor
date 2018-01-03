@@ -82,5 +82,5 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 
 ## License
 
-Copyright (c) 2016-2017 [@ziyasal](https://github.com/ziyasal) & [@danielbayerlein](https://github.com/danielbayerlein).
+Copyright (c) 2016-present [@ziyasal](https://github.com/ziyasal) & [@danielbayerlein](https://github.com/danielbayerlein).
 See [LICENSE](./LICENSE.md) for details.
