@@ -13,9 +13,9 @@ describe('helpers', () => {
 
       it('then spans === array', () => {
         const spans = [
-          { interval: 1, retention: 60 },
-          { interval: 5, retention: 60 },
-          { interval: 15, retention: 60 },
+          { interval: 1, retention: 60, responses: [] },
+          { interval: 5, retention: 60, responses: [] },
+          { interval: 15, retention: 60, responses: [] },
         ];
 
         expect(spans).toEqual(defaultConfig.spans);
