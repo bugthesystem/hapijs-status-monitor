@@ -22,9 +22,7 @@ npm install hapijs-status-monitor --save
 **Register plugin**
 
 ```js
-server.register({
-  register: require('hapijs-status-monitor')
-});
+await server.register({ plugin: require('hapijs-status-monitor') });
 ```
 **Run server and go to** `/status`
 
@@ -40,8 +38,8 @@ server.register({
 Monitor can be configured by passing options object into server register method
 
 ```js
-server.register({
-  register: require('hapijs-status-monitor'),
+await server.register({
+  plugin: require('hapijs-status-monitor'),
   options: {
     title: 'My Status Monitor',
     routeConfig: {
