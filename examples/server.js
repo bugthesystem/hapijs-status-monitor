@@ -21,7 +21,7 @@ server.route({
 // Start the server
 async function start() {
   try {
-    await server.register({ plugin: hapijsStatusMonitor })
+    await server.register({ plugin: hapijsStatusMonitor });
     await server.start();
   }
   catch (err) {
