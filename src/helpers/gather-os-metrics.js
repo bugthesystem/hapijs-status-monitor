@@ -13,7 +13,7 @@ module.exports = (io, span) => {
     timestamp: Date.now(),
   };
 
-  pidusage.stat(process.pid, (err, stat) => {
+  pidusage(process.pid, (err, stat) => {
     if (err) {
       console.error(err); // eslint-disable-line no-console
       return;
