@@ -23,5 +23,9 @@ module.exports = (config) => {
     cfg.routeConfig = defaultConfig.routeConfig;
   }
 
+  if (typeof cfg.websocket !== 'object') {
+    cfg.websocket = defaultConfig.websocket;
+  }
+
   return cfg;
 };

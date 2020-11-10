@@ -5,18 +5,23 @@ const gatherOsMetrics = require('./gather-os-metrics');
 
 let io;
 
-module.exports = (server, spans) => {
+module.exports = (server, config) => {
   if (io === null || io === undefined) {
-    io = socketIo(server);
+    if (config.websocket) {
+      io = config.websocket;
+    } else {
+      io = socketIo(server);
+    }
 
     io.on('connection', (socket) => {
-      socket.emit('start', spans);
+      socket.emit('start', config.spans);
+
       socket.on('change', () => {
-        socket.emit('start', spans);
+        socket.emit('start', config.spans);
       });
     });
 
-    spans.forEach((currentSpan) => {
+    config.spans.forEach((currentSpan) => {
       const span = currentSpan;
       span.os = [];
       span.responses = [];

@@ -10,7 +10,7 @@ const middlewareWrapper = (server, options) => {
 
   // Setup Socket.IO
   server.events.on('start', () => {
-    socketIoInit(server.listener, opts.spans);
+    socketIoInit(server.listener, opts);
   });
 
   server.route({
