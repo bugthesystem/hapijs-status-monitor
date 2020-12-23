@@ -54,6 +54,7 @@ Default options:
 ```js
 title: 'hapi.js Status',
 path: '/status',
+websocket: null, // The Socket.io instance to be used, if none provided a new one will be created!
 spans: [{
   interval: 1,     // Every second
   retention: 60    // Keep 60 datapoints in memory
