@@ -18,5 +18,6 @@ module.exports = {
       responses: [],
     },
   ],
+  websocket: null,
   routeConfig: {}, // https://github.com/hapijs/hapi/blob/master/API.md#route-options
 };
