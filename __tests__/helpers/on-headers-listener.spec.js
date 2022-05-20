@@ -24,18 +24,18 @@ describe('helpers', () => {
       });
 
       describe('when invoked after 1 second', () => {
-        it('then for span interval 1, responses length should equal 2', () => {
-          setTimeout(() => {
-            onHeadersListener(500, process.hrtime(), spans);
+        it('then for span interval 1, responses length should equal 2', async () => {
+          onHeadersListener(500, process.hrtime(), spans);
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          onHeadersListener(500, process.hrtime(), spans);
 
-            spans.forEach((span) => {
-              if (span.interval === 1) {
-                expect(span.responses.length).toBe(2);
-              } else {
-                expect(span.responses.length).toBe(1);
-              }
-            });
-          }, 1000);
+          spans.forEach((span) => {
+            if (span.interval === 1) {
+              expect(span.responses.length).toBe(2);
+            } else {
+              expect(span.responses.length).toBe(1);
+            }
+          });
         });
       });
     });
