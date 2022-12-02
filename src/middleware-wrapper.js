@@ -17,12 +17,11 @@ const middlewareWrapper = (server, options) => {
     method: 'GET',
     path: opts.path,
     handler: () => {
-      const renderedHtml =
-        fs.readFileSync(path.join(__dirname, '/public/index.html'))
-          .toString()
-          .replace(/{{title}}/g, opts.title)
-          .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
-          .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
+      const renderedHtml = fs.readFileSync(path.join(__dirname, '/public/index.html'))
+        .toString()
+        .replace(/{{title}}/g, opts.title)
+        .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
+        .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
 
       return renderedHtml;
     },

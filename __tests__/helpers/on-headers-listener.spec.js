@@ -26,7 +26,7 @@ describe('helpers', () => {
       describe('when invoked after 1 second', () => {
         it('then for span interval 1, responses length should equal 2', async () => {
           onHeadersListener(500, process.hrtime(), spans);
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 1000));
           onHeadersListener(500, process.hrtime(), spans);
 
           spans.forEach((span) => {
