@@ -53,7 +53,8 @@ Default options:
 
 ```js
 title: 'hapi.js Status',
-path: '/status',
+path: '/status', // Path to Status Page
+base: '/', // href attribute of the base html tag 
 websocket: null, // The Socket.io instance to be used, if none provided a new one will be created!
 spans: [{
   interval: 1,     // Every second
