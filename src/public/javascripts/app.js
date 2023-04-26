@@ -7,7 +7,12 @@ Chart.defaults.global.elements.line.backgroundColor = "rgba(0,0,0,0)";
 Chart.defaults.global.elements.line.borderColor = "rgba(0,0,0,0.9)";
 Chart.defaults.global.elements.line.borderWidth = 2;
 
-var socket = io(location.protocol + '//' + location.hostname + ':' + location.port);
+const baseTag = document.querySelector('base');
+const basePath = baseTag ? baseTag.getAttribute('href') : '/';
+
+var socket = io(location.protocol + '//' + location.hostname + ':' + location.port, {
+  path: `${basePath}/socket.io`
+});
 var defaultSpan = 0;
 var spans = [];
 var statusCodesColors = ['#75D701', '#47b8e0', '#ffc952', '#E53A40'];
