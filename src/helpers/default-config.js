@@ -1,6 +1,7 @@
 module.exports = {
   title: 'hapi.js Status',
   path: '/status',
+  base: '/',
   spans: [
     {
       interval: 1,

@@ -20,6 +20,7 @@ const middlewareWrapper = (server, options) => {
       const renderedHtml = fs.readFileSync(path.join(__dirname, '/public/index.html'))
         .toString()
         .replace(/{{title}}/g, opts.title)
+        .replace(/{{base}}/g, opts.base)
         .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
         .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
 

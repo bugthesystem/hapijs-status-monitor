@@ -11,6 +11,11 @@ describe('helpers', () => {
         expect('/status').toEqual(defaultConfig.path);
       });
 
+      it('then base === /', () => {
+        expect('/').toEqual(defaultConfig.base);
+      });
+
+
       it('then spans === array', () => {
         const spans = [
           { interval: 1, retention: 60, responses: [] },
